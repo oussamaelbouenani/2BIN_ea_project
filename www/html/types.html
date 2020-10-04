@@ -1,0 +1,52 @@
+<article id="types-view-page" style="display: none">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Types</a></li>
+                <li class="breadcrumb-item active">Introduire un type d'aménagement</li>
+            </ol>
+            <div class="row">
+                <div class="col-6">
+                    <h1>Introduire Type</h1>
+                    <div id="form-type">
+                        <form method="POST" class="amenagement-form" action="" role="form" accept-charset="UTF-8">
+                            <div class="form-group col-6">
+                                <label for="type-titre">Titre</label>
+                                <input type="text" class="form-control" id="type-titre"
+                                       name="titre" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="type-description">Description</label>
+                                <textarea type="text" class="form-control"
+                                          id="type-description" name="description"
+                                          required></textarea>
+                            </div>
+                            <div class="col-6 pb-2">
+                                <input type="button" id="form-inserer-type" class="btn btn-primary"
+                                       value="Introduire">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="col-10">
+                        <h1>Types Existants</h1>
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Titre</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                            </thead>
+                            <tbody id="inject-types">
+                            <!-- injection -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

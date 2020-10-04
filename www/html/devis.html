@@ -1,0 +1,231 @@
+<article id="devis-view-page" style="display: none">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- En-tête -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Devis</a></li>
+                <li class="breadcrumb-item active">Introduire un devis</li>
+            </ol>
+            <div class="col-lg-8 col-lg-offset-2">
+                <!-- formulaire devis -->
+                <form class="devis-form" method="post" action="" role="form" accept-charset="UTF-8">
+                    <h4>Devis</h4>
+                    <div class="controls">
+                        <br>
+                        <div class="form-group">
+                            <label class="form-date-devis" for="form-date-devis">Date du
+                                devis</label>
+                            <input type="date" name="dateDevis" class="form-control"
+                                   id="form-date-devis" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-montant-total" for="form-montant-total">Montant
+                                total</label>
+                            <input type="text" name="montantTotal" class="form-control"
+                                   id="form-montant-total" placeholder="Montant total" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-duree-travaux" for="form-duree-travaux">Duree
+                                travaux</label>
+                            <input type="text" name="dureeTravaux" class="form-control"
+                                   id="form-duree-travaux" placeholder="Duree travaux" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-date-debut-travaux">Date debut travaux</label>
+                            <input type="date" name="dateDebutTravaux" class="form-control"
+                                   id="form-date-debut-travaux" value="">
+                        </div>
+                        <label for="select-type-amenagement">Type aménagement</label>
+                        <div class="row" name="formTypesAmegamenet" id="select-type-amenagement">
+                            <!-- injection -->
+                        </div>
+                        <br>
+                    </div>
+                </form>
+                <!-- form ajouter type aménagement -->
+                <div>
+                    <input type="button" class="col-2 btn btn-info"
+                           value="Ajouter un type ?" id="show-type-devis-form"
+                           style="min-width: 150px;">
+                    <input type="button" class="col-2 btn btn-info"
+                           value="Cacher" id="hide-type-devis-form" style="min-width: 150px;">
+                    <div id="form-type2" class="p-3">
+                        <form method="POST" class="amenagement-form" action="" role="form"
+                              accept-charset="UTF-8">
+                            <div class="form-group col-6">
+                                <label for="type-titre2">Titre</label>
+                                <input type="text" class="form-control" id="type-titre2"
+                                       name="titre">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="type-description2">Description</label>
+                                <textarea type="text" class="form-control"
+                                          id="type-description2" name="description"
+                                ></textarea>
+                            </div>
+                            <div class="col-6 pb-2">
+                                <input type="button" id="form-inserer-type2" class="btn btn-primary"
+                                       value="Introduire">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <!-- formulaire photo -->
+                <hr>
+                <h4>Photos (Min. 1)</h4>
+                <br>
+                <form class="photo-form" method="post" action="" role="form" accept-charset="UTF-8">
+                    <div class="form-group">
+                        <div class="row row-cols">
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input"
+                                           id="picturesBeforeAmenagement" accept="image/*"
+                                           name="inputPhotoAvantAmen" value=""/>
+                                    <label class="custom-file-label"
+                                           for="picturesBeforeAmenagement">Photo avant
+                                        aménagement</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="button" class="btn btn-info" id="photo-form-clear"
+                                       value="Clear">
+                            </div>
+                            <div class="container" id="pictures-previews"></div>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <!-- formulaire client -->
+                <hr>
+                <h4>Client</h4>
+                <br>
+                <form class="client-form" method="post" action="" role="form">
+                    <div class="row">
+                        <!-- est encodé -->
+                        <div class="col-sm-6">
+                            <h5>Est déjà encodé</h5>
+                            <br>
+                            <select class="form-control" id="select-client"
+                                    name="select-client">
+                                <optgroup label="Clients">
+                                </optgroup>
+                            </select>
+                        </div>
+                        <!-- n'est pas encodé -->
+                        <div class="col-sm-6">
+                            <h5>N'est pas encodé</h5>
+                            <br>
+                            <button type="button" id="show-client"
+                                    class="col-12 btn btn-outline-info"
+                                    value="N'est pas encodé ?">Introduire ?
+                            </button>
+                            <button type="button" id="hide-client"
+                                    class="col-12 btn btn-outline-info"
+                                    value="Cacher">Cacher
+                            </button>
+                            <div id="form-client">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="devis-client-nom" type="text" name="nom"
+                                                   class="form-control" placeholder="Nom">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="devis-client-prenom" type="text"
+                                                   name="prenom"
+                                                   class="form-control" placeholder="Prénom">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row row-cols-4">
+                                        <input id="devis-client-adresse-rue" type="text" name="rue"
+                                               class="form-control col" placeholder="Rue">
+                                        <input id="devis-client-adresse-numero" type="text"
+                                               name="numero"
+                                               class="form-control col" placeholder="Numero">
+                                        <input id="devis-client-adresse-boite" type="text"
+                                               name="boite"
+                                               class="form-control col" placeholder="Boite">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="devis-client-code-postal" type="text"
+                                                   name="codePostal"
+                                                   class="form-control" placeholder="Code postal">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="devis-client-ville" type="text" name="ville"
+                                                   class="form-control" placeholder="Ville">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="devis-client-email" type="email" name="email"
+                                                   class="form-control" placeholder="Email">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="devis-client-telephone" type="text"
+                                                   name="telephone"
+                                                   class="form-control" placeholder="Téléphone">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-primary"
+                                            id="submit-inserer-client">
+                                        Introduire client
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <div class="col-md-6 text-center">
+                    <button type="submit" class=" col-6 btn btn-info" id="lier-client-inscrit"
+                            style="min-width:200px">
+                        Lier le client à un inscrit
+                    </button>
+                </div>
+                <br>
+            </div>
+            <!-- bouton introduire devis -->
+            <div class="container pb-5 fixed-bottom text-left">
+                <div class="col-10 text-right">
+                    <button type="submit" class="col-md-5 btn btn-primary"
+                            id="submit-inserer-devis"
+                    >
+                        Introduire devis
+                    </button>
+                </div>
+            </div>
+            <br> <br>
+        </div>
+    </div>
+    </div>
+</article>

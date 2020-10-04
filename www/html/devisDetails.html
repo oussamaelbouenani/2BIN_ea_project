@@ -1,0 +1,163 @@
+<article id="devisDetails-view-page" style="display: none">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Devis</a></li>
+                <li class="breadcrumb-item active">Devis details</li>
+            </ol>
+            <div class="col-lg-8 col-lg-offset-2">
+                <form id="devisDetails">
+                    <div class="form-group">
+                        <h4 name="idDevis"></h4>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Client</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" id="devis-client"
+                                   name="nomPrenomClient" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">date</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" id="devis-date" name="dateDevis"
+                                   disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Montant total</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" id="devis-montant-total"
+                                   name="montantTotal" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Duree travaux</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" id="devis-duree-travaux"
+                                   name="dureeTravaux" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Etat d'avancement</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" id="devis-etat" name="etat"
+                                   disabled>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="divFactureAcompte">
+                                <button type="button" name="factureAcompte"
+                                        id="indiquer-commande-confirme"
+                                        class="container-fluid btn btn-warning changeEtatBouton"
+                                        disabled>Confirmer commande
+                                </button>
+                            </div>
+                            <div class="divFactureMilieuChantier">
+                                <input type="button" name="factureMilieu"
+                                       id="indiquer-facture-milieu"
+                                       class="container-fluid btn btn-warning changeEtatBouton"
+                                       value="Facture de milieu de chantier"
+                                       disabled>
+                            </div>
+                            <div class="divFactureFinChantier">
+                                <input type="button" name="factureFin" id="indiquer-facture-fin"
+                                       class="container-fluid btn btn-warning changeEtatBouton"
+                                       value="Facture de fin de chantier"
+                                       disabled>
+                            </div>
+                            <div class="row divVisibleNonVisible">
+                                <div class="col-6">
+                                    <button style="width: 100%" type="button" name="visible"
+                                            id="indiquer-visible"
+                                            class=" btn btn-warning changeEtatBouton"
+                                            disabled>Visible
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button style="width: 100%" type="button" name="nonVisible"
+                                            id="indiquer-non-visible"
+                                            class=" btn btn-warning changeEtatBouton"
+                                            disabled>Non visible
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Date debut des travaux</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="date" id="devis-date-debut-travaux"
+                                   name="dateDebutTravaux" disabled>
+                            <button type="button" name="confirmerDateDebutTravaux"
+                                    id="confirmer-date-debut-travaux"
+                                    class="btn btn-success changeEtatBouton"
+                                    disabled>Confirmer date de debut des travaux
+                            </button>
+                            <br>
+                            <button type="button" name="modifierDate"
+                                    class="btn btn-primary changeEtatBouton"
+                                    id="modifier-date-debut" disabled>Modifier
+                            </button>
+                            <button type="button" name="supprimerDate"
+                                    class="btn btn-danger changeEtatBouton"
+                                    id="supprimer-date-debut" disabled>Supprimer
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Types d'amenagements</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" id="devis-types-amenagement"
+                                   name="typesAmenagement" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Photo favorite</label>
+                        <div class="col-lg-8">
+                            <img name="photoFav" style="width: 400px;" src="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="pl-4 devisDetailFormPhoto" style="display: none;">
+                <form class="devis-detail-picture" method="post" action="" role="form"
+                      accept-charset="UTF-8">
+                    <div class="form-group">
+                        <div class="row row-cols">
+                            <div class="col-5">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input"
+                                           id="picturesAfterAmenagement" accept="image/*"
+                                           required value=""/>
+                                    <label class="custom-file-label"
+                                           for="picturesAfterAmenagement">Photo fin
+                                        aménagement</label>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <input type="button" class="btn btn-outline-info"
+                                       id="photo-detail-clear"
+                                       value="Effacer">
+                            </div>
+                            <div class="col-2">
+                                <input type="button" class="btn btn-outline-primary"
+                                       id="send-pictures-details" value="Ajouter les photos">
+                            </div>
+                            <div class="container" id="pictures-previews-details"></div>
+                        </div>
+                        <select class="custom-select col-5" id="select-type-amenagement-detail"
+                                required>
+                            <!-- injection -->
+                        </select><br>
+                        <label for="visible-details" class="pr-2"><b>Rendre visible ? </b></label>
+                        <div id="clear-detail">
+                            <input type="checkbox" name="visible" id="visible-details">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,27 @@
+
+.dataTables_wrapper .dataTables_length {
+	
+	float: left;
+}
+
+.dataTables_wrapper .dataTables_filter {
+
+	float: right;
+	text-align: left;
+}
+
+
+.centerText{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    height: 50vh;
+}
+
+.dataTables_empty{
+	text-align: center;
+ }
+
+#adresse {
+	display: inline-block;
+}

@@ -1,0 +1,45 @@
+<article id="accueil-view-page" style="display: none">
+    <div id="wrapper" class="content-wrapper bg-light">
+        <div class="container bg-light">
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                        class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" id="carousel-inner">
+                    <!-- injection -->
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                   data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                   data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <hr>
+            <!-- Aperçu d'amenagements -->
+            <div class="container">
+                <!-- filtre -->
+                <div class="input-group">
+                    <select class="custom-select" id="filter-type-amenagement">
+                        <option selected>Type Aménagement...</option>
+                        <!-- injection -->
+                    </select>
+                    <div class="input-group-append" id="filter-submit">
+                        <button class="btn btn-outline-secondary" type="button">Filtrer</button>
+                    </div>
+                </div>
+                <div class="row" id="types-amenagement-apercu">
+                    <!-- injection -->
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
